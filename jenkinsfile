@@ -1,10 +1,7 @@
 pipeline {
     // master executor should be set to 0
     agent any
-    //environment {
-      //  user     = credentials('jenkins-aws-secret-key-id')
-        //password = credentials('jenkins-aws-secret-access-key')
-    //}
+
     stages {
         stage('Build Jar') {
             steps {
@@ -20,16 +17,10 @@ pipeline {
         }
         stage('Push Image') {
             steps {
-                //withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                //withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhubid', usernameVariable: 'user', passwordVariable: 'pass']]) {
-                    //sh
-
-
-                    withCredentials([usernamePassword(credentialsId: 'dockerhubid1', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
                         sh "docker login --username=${user} --password=${pass}"
                         sh "docker push oussbenma/selenium-docker:latest"
                     }
-
 
 
             }
