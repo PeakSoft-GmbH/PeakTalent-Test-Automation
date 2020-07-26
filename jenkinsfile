@@ -22,7 +22,6 @@ pipeline {
                         sh "docker push oussbenma/selenium-docker:latest"
                     }
 
-
             }
         }
     }
