@@ -1,10 +1,10 @@
 pipeline {
     // master executor should be set to 0
     agent any
-    environment {
-        user     = credentials('jenkins-aws-secret-key-id')
-        password = credentials('jenkins-aws-secret-access-key')
-    }
+   // environment {
+     //   user     = credentials('jenkins-aws-secret-key-id')
+       // password = credentials('jenkins-aws-secret-access-key')
+    //}
     stages {
         stage('Build Jar') {
             steps {
