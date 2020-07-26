@@ -25,7 +25,7 @@ pipeline {
                     //sh
 
 
-                    withCredentials([usernamePassword(credentialsId: 'dockerhubid', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                    withCredentials([usernamePassword(credentialsId: 'dockerhubid1', passwordVariable: 'pass', usernameVariable: 'user')]) {
                         sh "docker login --username=${user} --password=${pass}"
                         sh "docker push oussbenma/selenium-docker:latest"
                     }
