@@ -7,15 +7,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HerrenArtikelPage {
+public class HerrenArticlePage {
 
     private WebDriver driver;
     private WebDriverWait wait;
 
-    @FindBy(css = "article.m-product-card-entry:nth-child(1) > a:nth-child(1))")
+    @FindBy(css = "#product-list > article:nth-child(1) > a")
     private WebElement artikel;
 
-    public HerrenArtikelPage(WebDriver driver)
+    public HerrenArticlePage(WebDriver driver)
     {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, 30);

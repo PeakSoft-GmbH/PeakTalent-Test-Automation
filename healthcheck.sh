@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Environment Variables
 # HUB_HOST
-# BROWSER
+# BROWSER = "chrome"
 # MODULE
 
 echo "Checking if hub is ready - $HUB_HOST"
@@ -14,5 +14,6 @@ done
 # start the java command
 java -cp selenium-docker-PeakSoft.jar:selenium-docker-PeakSoft-tests.jar:libs/* \
     -DHUB_HOST=$HUB_HOST \
-    -DBROWSER=$BROWSER \
+    -DBROWSER="chrome" \
+ #   -DBROWSER=$BROWSER \
     org.testng.TestNG $MODULE

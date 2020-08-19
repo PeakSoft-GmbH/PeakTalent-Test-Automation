@@ -34,7 +34,7 @@ public class LoginPage {
     {
         driver.get(url);
         this.wait.until(ExpectedConditions.visibilityOf(this.usernameTxt));
-     //   driver.manage().window().maximize();
+        driver.manage().window().maximize();
     }
 
     public void enterCredentials(String username, String password)

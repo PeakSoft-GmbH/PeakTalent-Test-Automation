@@ -1,7 +1,8 @@
 package com.deichmann.tests;
 
-import com.deichmann.pages.HerrenArtikelPage;
+import com.deichmann.pages.HerrenArticlePage;
 import com.deichmann.pages.LoginPage;
+import com.deichmann.pages.SelectedArticlePage;
 import com.tests.BaseTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -38,11 +39,22 @@ public class BuyProcessTest extends BaseTest
     }
 
     @Test(dependsOnMethods = "loginPageTest")
-    public void herrenArtikelPage() throws InterruptedException {
-        HerrenArtikelPage herrenArtikelPage = new HerrenArtikelPage(driver);
+    public void herrenArtikelPageTest() throws InterruptedException {
+        HerrenArticlePage herrenArticlePage = new HerrenArticlePage(driver);
         Thread.sleep(2000);
 
-        //herrenArtikelPage.selectArtikel();
+        herrenArticlePage.selectArtikel();
+    }
+
+    @Test(dependsOnMethods = "herrenArtikelPageTest")
+    public void selectedArticlePageTest() throws InterruptedException {
+        SelectedArticlePage selectedArticlePage = new SelectedArticlePage(driver);
+        Thread.sleep(2000);
+
+        selectedArticlePage.selectOpenSizeSelector();
+//        selectedArticlePage.selectSizeSystem();
+        selectedArticlePage.selectSize();
+        selectedArticlePage.selectaddToWarenkorb();
     }
 
 
