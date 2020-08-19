@@ -3,6 +3,7 @@ package com.deichmann.tests;
 import com.deichmann.pages.HerrenArticlePage;
 import com.deichmann.pages.LoginPage;
 import com.deichmann.pages.SelectedArticlePage;
+import com.deichmann.pages.CheckOutLoginPage;
 import com.tests.BaseTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -56,6 +57,21 @@ public class BuyProcessTest extends BaseTest
         selectedArticlePage.selectSize();
         selectedArticlePage.selectaddToWarenkorb();
     }
+
+
+    @Test(dependsOnMethods = "selectedArticlePageTest")
+    public void checkOutLoginPageTest() throws InterruptedException {
+        CheckOutLoginPage checkOutLoginPage = new CheckOutLoginPage(driver);
+        Thread.sleep(2000);
+
+        checkOutLoginPage.selectAlsGastFortfahren();
+
+
+    }
+
+
+
+
 
 
 
