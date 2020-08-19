@@ -14,6 +14,5 @@ done
 # start the java command
 java -cp selenium-docker-PeakSoft.jar:selenium-docker-PeakSoft-tests.jar:libs/* \
     -DHUB_HOST=$HUB_HOST \
-    -DBROWSER="chrome" \
- #   -DBROWSER=$BROWSER \
+    -DBROWSER=$BROWSER \
     org.testng.TestNG $MODULE
