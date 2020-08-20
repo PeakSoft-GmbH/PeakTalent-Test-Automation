@@ -12,7 +12,7 @@ public class CheckOutLoginPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    @FindBy(css = ".button")
+    @FindBy(xpath = "/html/body/div[1]/main/form[1]/a")
     private WebElement alsGastFortfahren;
 
     public CheckOutLoginPage(WebDriver driver)

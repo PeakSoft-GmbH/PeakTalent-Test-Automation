@@ -12,6 +12,9 @@ public class HerrenArticlePage {
     private WebDriver driver;
     private WebDriverWait wait;
 
+    @FindBy(css = "body > div.m-root > section > section > button")
+    private WebElement cookies;
+
     @FindBy(css = "#product-list > article:nth-child(1) > a")
     private WebElement artikel;
 
@@ -20,6 +23,12 @@ public class HerrenArticlePage {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, 30);
         PageFactory.initElements(driver, this);
+    }
+
+    public void acceptCookies()
+    {
+        this.wait.until(ExpectedConditions.visibilityOf(this.cookies));
+        this.cookies.click();
     }
 
     public void selectArtikel()

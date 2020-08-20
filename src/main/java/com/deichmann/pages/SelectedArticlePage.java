@@ -9,11 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SelectedArticlePage {
 
-
     private WebDriver driver;
     private WebDriverWait wait;
 
-    @FindBy(css = ".open-size-selector > summary:nth-child(1)")
+
+    @FindBy(xpath = "//*[@class='open-size-selector']")
     private WebElement openSizeSelector;
 
     @FindBy(css = ".size-system > li:nth-child(2)")
@@ -25,9 +25,11 @@ public class SelectedArticlePage {
     @FindBy(css = "section.actions:nth-child(3) > div:nth-child(1) > form:nth-child(1) > button:nth-child(3)")
     private WebElement addToWarenkorb;
 
-    @FindBy(css = "div.m-modal:nth-child(17) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > m-button:nth-child(2) > button:nth-child(1)")
+    @FindBy(xpath = "/html/body/div[8]/div[2]/div/div/div[2]/m-button[1]/button")
     private WebElement jetztSicherZurKasse;
 
+    @FindBy(xpath = ".dy-close-button > svg:nth-child(1)")
+    private WebElement exitPasstDazu;
 
     public SelectedArticlePage(WebDriver driver)
     {
@@ -50,7 +52,7 @@ public class SelectedArticlePage {
 
     public void selectSize()
     {
-       // this.wait.until(ExpectedConditions.visibilityOf(this.size));
+        this.wait.until(ExpectedConditions.visibilityOf(this.size));
         this.size.click();
     }
 
@@ -60,6 +62,18 @@ public class SelectedArticlePage {
         this.addToWarenkorb.click();
     }
 
+    public void exitPasstDazu()
+    {
+        this.wait.until(ExpectedConditions.visibilityOf(this.exitPasstDazu));
+        this.exitPasstDazu.click();
+    }
 
+
+    public void jetztSicherZurKasse()
+    {
+        this.wait.until(ExpectedConditions.visibilityOf(this.jetztSicherZurKasse));
+        this.jetztSicherZurKasse.click();
+
+    }
 
 }

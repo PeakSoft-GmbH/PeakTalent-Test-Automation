@@ -5,9 +5,12 @@ import com.deichmann.pages.LoginPage;
 import com.deichmann.pages.SelectedArticlePage;
 import com.deichmann.pages.CheckOutLoginPage;
 import com.tests.BaseTest;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
 
 public class BuyProcessTest extends BaseTest
 
@@ -43,7 +46,7 @@ public class BuyProcessTest extends BaseTest
     public void herrenArtikelPageTest() throws InterruptedException {
         HerrenArticlePage herrenArticlePage = new HerrenArticlePage(driver);
         Thread.sleep(2000);
-
+        herrenArticlePage.acceptCookies();
         herrenArticlePage.selectArtikel();
     }
 
@@ -56,16 +59,20 @@ public class BuyProcessTest extends BaseTest
 //        selectedArticlePage.selectSizeSystem();
         selectedArticlePage.selectSize();
         selectedArticlePage.selectaddToWarenkorb();
+        //driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS) ;
+
+        //selectedArticlePage.exitPasstDazu();
+        selectedArticlePage.jetztSicherZurKasse();
+
     }
 
 
     @Test(dependsOnMethods = "selectedArticlePageTest")
     public void checkOutLoginPageTest() throws InterruptedException {
         CheckOutLoginPage checkOutLoginPage = new CheckOutLoginPage(driver);
-        Thread.sleep(2000);
+        Thread.sleep(200000);
 
         checkOutLoginPage.selectAlsGastFortfahren();
-
 
     }
 
