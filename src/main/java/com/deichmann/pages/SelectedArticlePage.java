@@ -25,7 +25,15 @@ public class SelectedArticlePage {
     @FindBy(css = "section.actions:nth-child(3) > div:nth-child(1) > form:nth-child(1) > button:nth-child(3)")
     private WebElement addToWarenkorb;
 
-    @FindBy(xpath = "/html/body/div[8]/div[2]/div/div/div[2]/m-button[1]/button")
+//    @FindBy(xpath = "/html/body/div[9]/div[2]/div/div/div[2]/m-button[1]")
+//    @FindBy(xpath = "//*[@data-value='Jetzt sicher zur Kasse']")
+//    @FindBy(xpath = "//*[@data-key='core.component.miniCart.toCheckout']")
+//    @FindBy(xpath = "//*[@data-key='core.component.miniCart.toCheckout']")
+//    @FindBy(xpath = "//text()[contains(.,'Jetzt sicher zur Kasse')]")
+
+
+
+    @FindBy(xpath = "//body[@class='modal-open']/div[@id='added-modal_desktop']/div[@class='modal rightleft isScrollable']/div[@class='content']/div[@class='m-mini-cart']/div[@class='minicart_summary']/m-button[1]/button[1]")
     private WebElement jetztSicherZurKasse;
 
     @FindBy(xpath = ".dy-close-button > svg:nth-child(1)")

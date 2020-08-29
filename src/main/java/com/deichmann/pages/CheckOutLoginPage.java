@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class CheckOutLoginPage {
 
     private WebDriver driver;
@@ -26,6 +28,7 @@ public class CheckOutLoginPage {
     {
         this.wait.until(ExpectedConditions.visibilityOf(this.alsGastFortfahren));
         this.alsGastFortfahren.click();
+        driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
     }
 
 

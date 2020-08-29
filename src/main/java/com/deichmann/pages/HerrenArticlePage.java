@@ -21,7 +21,7 @@ public class HerrenArticlePage {
     public HerrenArticlePage(WebDriver driver)
     {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 30);
+        this.wait = new WebDriverWait(driver, 10);
         PageFactory.initElements(driver, this);
     }
 

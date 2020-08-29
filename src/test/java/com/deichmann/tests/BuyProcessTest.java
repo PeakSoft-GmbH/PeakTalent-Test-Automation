@@ -1,14 +1,12 @@
 package com.deichmann.tests;
 
-import com.deichmann.pages.HerrenArticlePage;
-import com.deichmann.pages.LoginPage;
-import com.deichmann.pages.SelectedArticlePage;
-import com.deichmann.pages.CheckOutLoginPage;
+import com.deichmann.pages.*;
 import com.tests.BaseTest;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import java.lang.Thread;
 
 import java.util.concurrent.TimeUnit;
 
@@ -56,25 +54,32 @@ public class BuyProcessTest extends BaseTest
         Thread.sleep(2000);
 
         selectedArticlePage.selectOpenSizeSelector();
-//        selectedArticlePage.selectSizeSystem();
+//      selectedArticlePage.selectSizeSystem();
         selectedArticlePage.selectSize();
         selectedArticlePage.selectaddToWarenkorb();
-        //driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS) ;
-
-        //selectedArticlePage.exitPasstDazu();
         selectedArticlePage.jetztSicherZurKasse();
 
     }
 
-
     @Test(dependsOnMethods = "selectedArticlePageTest")
     public void checkOutLoginPageTest() throws InterruptedException {
         CheckOutLoginPage checkOutLoginPage = new CheckOutLoginPage(driver);
-        Thread.sleep(200000);
+        Thread.sleep(2000);
 
         checkOutLoginPage.selectAlsGastFortfahren();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
     }
+
+    @Test(dependsOnMethods = "checkOutLoginPageTest")
+    public void checkOutNewAdressPageTest() throws InterruptedException {
+        CheckoutNewAddressPage checkoutNewAddressPage = new CheckoutNewAddressPage(driver);
+        Thread.sleep(20000);
+        checkoutNewAddressPage.setVorname();
+
+
+    }
+
 
 
 
