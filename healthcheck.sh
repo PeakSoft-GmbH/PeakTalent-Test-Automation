@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Environment Variables
 # HUB_HOST
-# BROWSER = "firefox"
+BROWSER = "chrome"
 # MODULE
 
 echo "Checking if hub is ready - $HUB_HOST"
