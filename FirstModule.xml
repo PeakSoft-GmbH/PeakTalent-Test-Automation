@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="BuyProcessSuite">
-    <parameter name="urlInput" value="https://habibmokni.github.io/peaksoft/auth/login"/>
+<suite name="FirstProcessSuite">
+    <parameter name="urlInput" value="https://habibmokni.github.io/ps-bms/"/>
     <parameter name="usernameInput" value="habib.mokni@outlook.fr"/>
     <parameter name="passwordInput" value="21932700"/>
     <test name="FirstProcessTest">
         <classes>
-            <class name="com.deichmann.tests.FirstProcessTest"></class>
+            <class name="com.peaksoft.tests.FirstProcessTest"></class>
         </classes>
     </test>
 </suite>

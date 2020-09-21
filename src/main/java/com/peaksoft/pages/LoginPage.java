@@ -1,4 +1,4 @@
-package com.deichmann.pages;
+package com.peaksoft.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +19,7 @@ public class LoginPage {
     @FindBy(id = "inputPassword")
     private WebElement passowrdTxt;
 
-    @FindBy(xpath = "/html/body/app-root/sb-login/sb-layout-auth/div/div[1]/main/div/div/div/div/div[2]/form/div[4]/button")
+    @FindBy(id = "login-btn")
     private WebElement loginButton;
 
 

@@ -1,4 +1,4 @@
-package com.deichmann.pages;
+package com.peaksoft.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,28 +7,34 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CheckoutNewAddressPage {
+public class TalentsPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
 
-    @FindBy(xpath = "//*[@placeholder='Vorname']")
-    private WebElement vorname;
 
-    public CheckoutNewAddressPage(WebDriver driver)
+    @FindBy(id = "add-talent-btn")
+    private WebElement neuTalentHinzufuegen;
+
+
+
+
+
+    public TalentsPage(WebDriver driver)
     {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 10);
+        this.wait = new WebDriverWait(driver, 30);
         PageFactory.initElements(driver, this);
-
     }
 
-    public void setVorname()
+    public void addNeuTalent()
     {
-        this.wait.until(ExpectedConditions.visibilityOf(this.vorname));
-        this.vorname.sendKeys("ABC");
-
-
+        this.wait.until(ExpectedConditions.visibilityOf(this.neuTalentHinzufuegen));
+        this.neuTalentHinzufuegen.click();
     }
+
+
+
+
 
 }
