@@ -13,14 +13,14 @@ public class LoginPage {
     private WebDriverWait wait;
 
 
-    @FindBy(id = "input_1")
+    @FindBy(id = "inputEmailAddress")
     private WebElement usernameTxt;
 
-    @FindBy(id = "input_2")
+    @FindBy(id = "inputPassword")
     private WebElement passowrdTxt;
 
-    @FindBy(className = "credentials_input_submit")
-    private WebElement submitButton;
+    @FindBy(xpath = "/html/body/app-root/sb-login/sb-layout-auth/div/div[1]/main/div/div/div/div/div[2]/form/div[4]/button")
+    private WebElement loginButton;
 
 
     public LoginPage(WebDriver driver)
@@ -45,7 +45,7 @@ public class LoginPage {
 
     public void submit()
     {
-        this.submitButton.click();
+        this.loginButton.click();
     }
 
 }

@@ -10,7 +10,7 @@ import java.lang.Thread;
 
 import java.util.concurrent.TimeUnit;
 
-public class BuyProcessTest extends BaseTest
+public class FirstProcessTest extends BaseTest
 
 {
 
