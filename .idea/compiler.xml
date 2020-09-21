@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="PeakTalent_Automation" />
         <module name="Selenium_Docker_Project" />
-        <module name="selenium-docker" />
       </profile>
     </annotationProcessing>
   </component>
