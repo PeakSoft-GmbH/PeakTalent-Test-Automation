@@ -34,6 +34,7 @@ public class FirstProcessTest extends BaseTest
         Thread.sleep(2000);
 
         loginPage.enterCredentials(usernameInput, passwordInput);
+
         loginPage.submit();
 
 
@@ -43,11 +44,9 @@ public class FirstProcessTest extends BaseTest
     @Test(dependsOnMethods = "loginPageTest")
     public void talentsPageTest() throws InterruptedException {
         TalentsPage talentsPage = new TalentsPage(driver);
-        driver.navigate().refresh();
 
         talentsPage.addNeuTalent();
 
-        Thread.sleep(5000);
 
     }
 

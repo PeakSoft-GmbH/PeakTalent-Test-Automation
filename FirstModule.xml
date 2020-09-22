@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="FirstProcessSuite">
-    <parameter name="urlInput" value="https://habibmokni.github.io/ps-bms/"/>
+    <parameter name="urlInput" value="https://habibmokni.github.io/ps-bms/auth/login"/>
     <parameter name="usernameInput" value="habib.mokni@outlook.fr"/>
     <parameter name="passwordInput" value="21932700"/>
     <test name="FirstProcessTest">

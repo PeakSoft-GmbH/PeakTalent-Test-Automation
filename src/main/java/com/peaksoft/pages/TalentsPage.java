@@ -18,8 +18,6 @@ public class TalentsPage {
 
 
 
-
-
     public TalentsPage(WebDriver driver)
     {
         this.driver = driver;
